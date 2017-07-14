@@ -1,7 +1,7 @@
 name: TWoNResourcePackHandler
 main: me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler
 author: AxiusDevelopment
-version: 1.5
+version: 1.6
 commands:
     pack:
         description: send yourself a link to the pack.

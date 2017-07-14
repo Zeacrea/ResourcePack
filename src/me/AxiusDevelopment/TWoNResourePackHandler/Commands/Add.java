@@ -36,10 +36,17 @@ public class Add implements CommandExecutor {
 			}
 			else
 			{
-				
-				config.addWorld((Player) sndr, args[0], args[1]);
-				sndr.sendMessage(ChatColor.translateAlternateColorCodes('&', this.messages.messageData.get("addAdded")));
-				return true;
+				if(args[1].contains(".")) {
+					config.addWorld((Player) sndr, args[0], args[1]);
+					sndr.sendMessage(ChatColor.translateAlternateColorCodes('&', this.messages.messageData.get("addAdded")));
+					return true;
+				}
+				else
+				{
+					sndr.sendMessage(ChatColor.translateAlternateColorCodes('&', this.messages.messageData.get("addError")));
+					System.out.print(String.format("[%s] Error when adding URL, Link definined is not a URL and thus wouldn't work properly!", main.getDescription().getName()));
+					return true;
+				}
 			}
 		}
 	}
