@@ -16,7 +16,7 @@ public class JoinEvent implements Listener {
 	
 	public JoinEvent(HashMap<String, String> configData, String string2, String string) {
 		cfg = configData;
-		update = string2.replaceAll("UP: ", "");
+		update = string2;
 		current = string;
 	}
 

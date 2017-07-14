@@ -44,10 +44,10 @@ public class TWoNResourcePackHandler extends JavaPlugin {
 	    getCommand("Pack-Reload").setExecutor(new Reload(config, messages, this));
 	    getCommand("Pack-Send").setExecutor(new Send(config, messages, this));
 	    getCommand("Pack-add").setExecutor(new Add(config, messages, this));
-	    
-	    if(Double.parseDouble(getUpdate()) > Double.parseDouble(getDescription().getVersion())) {
+	    int i = Integer.parseInt(getUpdate().replaceAll("\\.", ""));
+	    if(i > Integer.parseInt(getDescription().getVersion().replaceAll("\\.", ""))) {
 	    	System.out.print("[TWoNResourcePackHandler] Update found.");
-	    	this.getServer().getPluginManager().registerEvents(new JoinEvent(configData, getUpdate(), getDescription().getVersion()), this);
+	    	this.getServer().getPluginManager().registerEvents(new JoinEvent(configData, i + "", getDescription().getVersion()), this);
 	    }
 	    
 	}
@@ -61,7 +61,7 @@ public class TWoNResourcePackHandler extends JavaPlugin {
             con.setDoOutput(true);
             con.setRequestMethod("POST");
             con.getOutputStream()
-                    .write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=42956")
+                    .write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=43639")
                             .getBytes("UTF-8"));
             String version = new BufferedReader(new InputStreamReader(
                     con.getInputStream())).readLine();
