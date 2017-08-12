@@ -1,7 +1,8 @@
 name: TWoNResourcePackHandler
 main: me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler
 author: AxiusDevelopment
-version: 1.8
+version: 2.0
+softdepend: ["ProtocolLib"]
 commands:
     pack:
         description: send yourself a link to the pack.

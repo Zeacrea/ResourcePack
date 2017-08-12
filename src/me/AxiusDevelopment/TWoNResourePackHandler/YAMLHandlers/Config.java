@@ -52,6 +52,7 @@ public class Config {
 	  
 	  private void saveMessages()
 	  {
+		setMessage("Method", "CHAT");
 	    setMessage("reloadPerm", "TWoNRPH.reload");
 	    setMessage("sendPerm", "TWoNRPH.send");
 	    setMessage("addPerm", "TWoNRPH.add");
