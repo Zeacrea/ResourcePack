@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNResourePackHandler.Events;
+package me.AxiusDevelopment.TWoNResourcePackHandler.Events;
 
 import java.util.HashMap;
 

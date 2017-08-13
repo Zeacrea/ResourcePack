@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers;
+package me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler;
+import me.AxiusDevelopment.TWoNResourcePackHandler.TWoNResourcePackHandler;
 import net.md_5.bungee.api.ChatColor;
 
 public class Config {

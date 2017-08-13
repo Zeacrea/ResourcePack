@@ -1,13 +1,13 @@
-package me.AxiusDevelopment.TWoNResourePackHandler.Commands;
+package me.AxiusDevelopment.TWoNResourcePackHandler.Commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler;
-import me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers.Config;
-import me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers.Messages;
+import me.AxiusDevelopment.TWoNResourcePackHandler.TWoNResourcePackHandler;
+import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Config;
+import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Messages;
 
 public class Reload implements CommandExecutor {
 

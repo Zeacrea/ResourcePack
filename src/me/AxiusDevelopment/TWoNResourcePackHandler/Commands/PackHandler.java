@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNResourePackHandler.Commands;
+package me.AxiusDevelopment.TWoNResourcePackHandler.Commands;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -13,7 +13,7 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
 
-import me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler;
+import me.AxiusDevelopment.TWoNResourcePackHandler.TWoNResourcePackHandler;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;

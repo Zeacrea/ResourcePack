@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers;
+package me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import me.AxiusDevelopment.TWoNResourePackHandler.TWoNResourcePackHandler;
+import me.AxiusDevelopment.TWoNResourcePackHandler.TWoNResourcePackHandler;
 
 public class Messages {
 	

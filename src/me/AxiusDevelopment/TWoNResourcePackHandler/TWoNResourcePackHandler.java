@@ -1,4 +1,4 @@
-package me.AxiusDevelopment.TWoNResourePackHandler;
+package me.AxiusDevelopment.TWoNResourcePackHandler;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,13 +9,14 @@ import java.util.HashMap;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.AxiusDevelopment.TWoNResourePackHandler.Commands.Add;
-import me.AxiusDevelopment.TWoNResourePackHandler.Commands.PackHandler;
-import me.AxiusDevelopment.TWoNResourePackHandler.Commands.Reload;
-import me.AxiusDevelopment.TWoNResourePackHandler.Commands.Send;
-import me.AxiusDevelopment.TWoNResourePackHandler.Events.JoinEvent;
-import me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers.Config;
-import me.AxiusDevelopment.TWoNResourePackHandler.YAMLHandlers.Messages;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.Add;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.PackHandler;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.Reload;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.Send;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Events.JoinEvent;
+import me.AxiusDevelopment.TWoNResourcePackHandler.Metrics.Metrics;
+import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Config;
+import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Messages;
 
 public class TWoNResourcePackHandler extends JavaPlugin {
 
@@ -25,6 +26,10 @@ public class TWoNResourcePackHandler extends JavaPlugin {
 	public HashMap<String, String> configData = new HashMap<String, String>();
 	
 	public void onEnable() {
+		
+		@SuppressWarnings("unused")
+		Metrics metrics = new Metrics(this);
+		
 	    File data = new File(this.getDataFolder().getParentFile() + File.separator + "TWoN");
 	    File thisone = new File(data + File.separator + "TWoNResourcePackHandler");
 	    if(!data.exists()) {
