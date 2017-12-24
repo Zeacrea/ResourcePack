@@ -1,7 +1,5 @@
 package me.AxiusDevelopment.TWoNResourcePackHandler.Commands;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.events.PacketContainer;
+//import com.comphenix.protocol.PacketType;
+//import com.comphenix.protocol.ProtocolLibrary;
+//import com.comphenix.protocol.events.PacketContainer;
 
 import me.AxiusDevelopment.TWoNResourcePackHandler.TWoNResourcePackHandler;
 import net.md_5.bungee.api.chat.ClickEvent;
@@ -55,7 +53,31 @@ public class PackHandler implements CommandExecutor {
 			else
 			{
 				if(this.plugin.configData.get("Method").equalsIgnoreCase("PROMPT")) {
+					
+					System.out.print("The \"Method\" field in the Config.YML is set to \"PROMPT\", which is currently disabled!");
+					System.out.print("Using default \"CHAT\" Method.");
+					
+					String resourcePack = ChatColor.translateAlternateColorCodes('&', this.plugin.messageData.get("messageBegin"));
+					String resourcePack2 = ChatColor.translateAlternateColorCodes('&', this.plugin.messageData.get("messageEnd"));
+					String hereText = ChatColor.translateAlternateColorCodes('&', this.plugin.messageData.get("hereText"));
+					String hereHover = ChatColor.translateAlternateColorCodes('&', this.plugin.messageData.get("hereHover"));
 					String url = "";
+					if(this.plugin.configData.containsKey("URL." + p.getWorld().getName())) {
+						url = this.plugin.configData.get("URL." + p.getWorld().getName());
+					}
+					else
+					{
+						url = this.plugin.configData.get("URL.Default");
+					} 
+					TextComponent here = new TextComponent(hereText);
+					here.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
+					here.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hereHover).create()));
+					TextComponent a = new TextComponent(resourcePack);
+					a.addExtra(here);
+					a.addExtra(resourcePack2);
+					p.spigot().sendMessage(a);
+					
+					/*String url = "";
 					if(this.plugin.configData.containsKey("URL." + p.getWorld().getName())) {
 						url = this.plugin.configData.get("URL." + p.getWorld().getName());
 					}
@@ -75,7 +97,7 @@ public class PackHandler implements CommandExecutor {
 			            e.printStackTrace();
 			        }
 			        
-			        return true;
+			        return true;*/
 				}
 				else
 				{

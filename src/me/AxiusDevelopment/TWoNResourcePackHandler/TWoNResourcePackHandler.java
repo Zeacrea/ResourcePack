@@ -14,7 +14,6 @@ import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.PackHandler;
 import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.Reload;
 import me.AxiusDevelopment.TWoNResourcePackHandler.Commands.Send;
 import me.AxiusDevelopment.TWoNResourcePackHandler.Events.JoinEvent;
-import me.AxiusDevelopment.TWoNResourcePackHandler.Metrics.Metrics;
 import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Config;
 import me.AxiusDevelopment.TWoNResourcePackHandler.YAMLHandlers.Messages;
 
@@ -26,9 +25,6 @@ public class TWoNResourcePackHandler extends JavaPlugin {
 	public HashMap<String, String> configData = new HashMap<String, String>();
 	
 	public void onEnable() {
-		
-		@SuppressWarnings("unused")
-		Metrics metrics = new Metrics(this);
 		
 	    File data = new File(this.getDataFolder().getParentFile() + File.separator + "TWoN");
 	    File thisone = new File(data + File.separator + "TWoNResourcePackHandler");
@@ -48,7 +44,7 @@ public class TWoNResourcePackHandler extends JavaPlugin {
 	    getCommand("Pack").setExecutor(new PackHandler(this));
 	    getCommand("Pack-Reload").setExecutor(new Reload(config, messages, this));
 	    getCommand("Pack-Send").setExecutor(new Send(config, messages, this));
-	    getCommand("Pack-add").setExecutor(new Add(config, messages, this));
+	    getCommand("Pack-Add").setExecutor(new Add(config, messages, this));
 	    int i = Integer.parseInt(getUpdate().replaceAll("\\.", ""));
 	    if(i > Integer.parseInt(getDescription().getVersion().replaceAll("\\.", ""))) {
 	    	System.out.print("[TWoNResourcePackHandler] Update found.");
